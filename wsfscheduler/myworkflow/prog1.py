@@ -12,6 +12,6 @@ import sys
 fp = open('out.txt', 'a+')
 fp.write(sys.argv[1]+"\n")
 fp.close()
-fp1=open('out1.txt','a+')
-fp1.write('anan\n')
-fp1.close()
+
+
+
