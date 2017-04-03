@@ -104,8 +104,11 @@ if len(sys.argv)==3:
 if topL!="Cycle!":
   for token in topL:
     if len(sys.argv)==3:
-      print str(datetime.datetime.now())+" "+execpgms[token].split(" ")[0]+" is started executing"
-    os.system(ssh1+" "+sys.argv[1]+"/"+execpgms[token])
+        print str(datetime.datetime.now())+" "+execpgms[token].split(" ")[0]+" is started executing"
+    if len(execpgms[token].split(" "))==1 and execpgms[token].find(".")<0:
+      os.system(ssh1+" "+execpgms[token])
+    else:
+      os.system(ssh1+" "+sys.argv[1]+"/"+execpgms[token])
     if len(sys.argv)==3:
        print str(datetime.datetime.now())+" "+ execpgms[token].split(" ")[0]+" is finished  executing"
 if len(sys.argv)==3:
